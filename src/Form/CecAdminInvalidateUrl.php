@@ -45,8 +45,6 @@ class CecAdminInvalidateUrl extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
-    $config = $this->config('cec.settings');
-
     // Textarea.
     $form['url'] = [
       '#type' => 'textarea',
@@ -99,7 +97,7 @@ class CecAdminInvalidateUrl extends ConfigFormBase {
 
     // Check if the credentials are configured
     if (!$config->get('cec_region' && !$config->get('cec_key') && !$config->get('cec_secret'))) {
-      drupal_set_message(t('You must configure the Global Settings correctly before execute an invalidation.'), 'error');
+      drupal_set_message($this->t('You must configure the Global Settings correctly before execute an invalidation.'), 'error');
     }
 
     else {
@@ -115,7 +113,7 @@ class CecAdminInvalidateUrl extends ConfigFormBase {
       list($status, $message) = cloudfront_edge_caching_invalidate_url($paths);
 
       if ($status == TRUE) {
-        drupal_set_message(t('You invalidation is in progress.'), 'status');
+        drupal_set_message($this->t('You invalidation is in progress.'), 'status');
       }
       else {
         drupal_set_message(t($message), 'error');
