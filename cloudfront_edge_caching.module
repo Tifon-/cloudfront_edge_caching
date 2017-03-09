@@ -56,7 +56,7 @@ function cloudfront_edge_caching_entity_update(Drupal\Core\Entity\EntityInterfac
       $test_connection_cec = cloudfront_edge_caching_test_connection($config->get('cec_region'), $config->get('cec_key'), $config->get('cec_secret'));
       if ($test_connection_cec == TRUE) {
         // Invalidate URL
-        list($status, $message) = cloudfront_edge_caching_invalidate_url(array($path_url));
+        cloudfront_edge_caching_invalidate_url(array($path_url));
       }
     }
   }
@@ -100,7 +100,7 @@ function cloudfront_edge_caching_test_connection($cec_region, $cec_key, $cec_sec
 
     // Try a connection test
     try {
-      $list_distributions = $cloudFront->listDistributions();
+      $cloudFront->listDistributions();
     } catch (AwsException $e) {
       $catch = TRUE;
       $return[1] = $e->getStatusCode();
@@ -146,7 +146,7 @@ function cloudfront_edge_caching_invalidate_url($paths) {
 
   // Invalidate URL
   try {
-    $result = $cloudFront->createInvalidation([
+    $cloudFront->createInvalidation([
       'DistributionId' => $config->get('cec_distribution_id'), // REQUIRED
       'InvalidationBatch' => [ // REQUIRED
         'CallerReference' => random_int(1, 999999999999999999),
