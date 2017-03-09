@@ -46,7 +46,7 @@ function cloudfront_edge_caching_entity_update(Drupal\Core\Entity\EntityInterfac
       $test_connection_cec = cloudfront_edge_caching_test_connection($config->get('cec_region'), $config->get('cec_key'), $config->get('cec_secret'));
       if ($test_connection_cec == TRUE) {
         // Invalidate URL
-        list($status, $message) = cloudfront_edge_caching_invalidate_url(array($path_url));
+        cloudfront_edge_caching_invalidate_url(array($path_url));
       }
     }
     elseif ($enable_auto_clear_cache_users['cec_auto_cache'] && $entity_type == 'user') {
