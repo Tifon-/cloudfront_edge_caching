@@ -138,7 +138,7 @@ class CecAdminSettingsForm extends ConfigFormBase {
           $form_state->setErrorByName('cec_key', $this->t('The credentials are incorrect.'));
           $form_state->setErrorByName('cec_secret', $this->t('The credentials are incorrect.'));
           break;
-        
+
         default:
           $form_state->setErrorByName('', $this->t($test_connection_cec[2]));
       }
