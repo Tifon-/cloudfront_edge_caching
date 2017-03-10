@@ -149,9 +149,9 @@ class CecAdminSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    // Retrieve the configuration
+    // Retrieve the configuration.
     $this->config('cec.settings')
-      // Set the submitted configuration setting
+      // Set the submitted configuration setting.
       ->set('cec_region', $form_state->getValue('cec_region'))
       ->set('cec_key', $form_state->getValue('cec_key'))
       ->set('cec_secret', $form_state->getValue('cec_secret'))
@@ -162,4 +162,5 @@ class CecAdminSettingsForm extends ConfigFormBase {
 
     parent::submitForm($form, $form_state);
   }
+
 }
