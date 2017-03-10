@@ -54,7 +54,7 @@ class CecAdminSettingsForm extends ConfigFormBase {
     // Region.
     $form['settings']['cec_region'] = [
       '#type' => 'textfield',
-      '#title' => t('Region'),
+      '#title' => $this->t('Region'),
       '#default_value' => $config->get('cec_region'),
       '#size' => 10,
       '#maxlength' => 128,
@@ -65,7 +65,7 @@ class CecAdminSettingsForm extends ConfigFormBase {
     // Key.
     $form['settings']['cec_key'] = [
       '#type' => 'textfield',
-      '#title' => t('Access Key Id'),
+      '#title' => $this->t('Access Key Id'),
       '#default_value' => $config->get('cec_key'),
       '#size' => 50,
       '#maxlength' => 128,
@@ -76,7 +76,7 @@ class CecAdminSettingsForm extends ConfigFormBase {
     // Secret.
     $form['settings']['cec_secret'] = [
       '#type' => 'textfield',
-      '#title' => t('Secret Access Key'),
+      '#title' => $this->t('Secret Access Key'),
       '#default_value' => $config->get('cec_secret'),
       '#size' => 20,
       '#maxlength' => 128,
@@ -87,7 +87,7 @@ class CecAdminSettingsForm extends ConfigFormBase {
     // Distribution ID.
     $form['settings']['cec_distribution_id'] = [
       '#type' => 'textfield',
-      '#title' => t('Distribution ID'),
+      '#title' => $this->t('Distribution ID'),
       '#default_value' => $config->get('cec_distribution_id'),
       '#size' => 20,
       '#maxlength' => 128,
@@ -104,7 +104,7 @@ class CecAdminSettingsForm extends ConfigFormBase {
     // TODO: Pending to https://www.drupal.org/node/2712079
     $cec_auto_cache_clear_content = array(
       '#type' => 'checkboxes',
-      '#options' => ['cec_auto_cache' => t('Clear cache when update content')],
+      '#options' => ['cec_auto_cache' => $this->t('Clear cache when update content')],
     );
 
     if ($config->get('cec_auto_cache_clear_content')) {
@@ -117,7 +117,7 @@ class CecAdminSettingsForm extends ConfigFormBase {
     // TODO: Pending to https://www.drupal.org/node/2712079
     $cec_auto_cache_clear_users = array(
       '#type' => 'checkboxes',
-      '#options' => ['cec_auto_cache' => t('Clear cache when update users')],
+      '#options' => ['cec_auto_cache' => $this->t('Clear cache when update users')],
     );
 
     if ($config->get('cec_auto_cache_clear_users')) {
@@ -173,8 +173,6 @@ class CecAdminSettingsForm extends ConfigFormBase {
       ->set('cec_auto_cache_clear_content', $form_state->getValue('cec_auto_cache_clear_content'))
       ->set('cec_auto_cache_clear_users', $form_state->getValue('cec_auto_cache_clear_users'))
       ->save();
-
-    $config = $this->config('cec.settings');
 
     parent::submitForm($form, $form_state);
   }
