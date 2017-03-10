@@ -33,10 +33,10 @@ class CecAdminSettingsForm extends ConfigFormBase {
 
     $config = $this->config('cec.settings');
 
-    $form['settings'] = array(
+    $form['settings'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('Settings'),
-    );
+    ];
 
     // Region.
     $form['settings']['cec_region'] = [
@@ -46,7 +46,7 @@ class CecAdminSettingsForm extends ConfigFormBase {
       '#size' => 10,
       '#maxlength' => 128,
       '#description' => $this->t('Ej: us-east-1'),
-      '#required' => TRUE
+      '#required' => TRUE,
     ];
 
     // Key.
@@ -57,7 +57,7 @@ class CecAdminSettingsForm extends ConfigFormBase {
       '#size' => 50,
       '#maxlength' => 128,
       '#description' => $this->t('Ej: EOjWGh6Keft9czeNkmHsa1aMcrhYukxdlIXRayDt'),
-      '#required' => TRUE
+      '#required' => TRUE,
     ];
 
     // Secret.
@@ -68,7 +68,7 @@ class CecAdminSettingsForm extends ConfigFormBase {
       '#size' => 20,
       '#maxlength' => 128,
       '#description' => $this->t('Ej: AHIAJF6JNSRJRVNSDOKA'),
-      '#required' => TRUE
+      '#required' => TRUE,
     ];
 
     // Distribution ID.
@@ -79,20 +79,20 @@ class CecAdminSettingsForm extends ConfigFormBase {
       '#size' => 20,
       '#maxlength' => 128,
       '#description' => $this->t('Ej: E206SWIPUZ2Z48'),
-      '#required' => TRUE
+      '#required' => TRUE,
     ];
 
-    $form['cache'] = array(
+    $form['cache'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('Cache configuration'),
-    );
+    ];
 
     // Auto clear cache for content
     // TODO: Pending to https://www.drupal.org/node/2712079
-    $cec_auto_cache_clear_content = array(
+    $cec_auto_cache_clear_content = [
       '#type' => 'checkboxes',
       '#options' => ['cec_auto_cache' => $this->t('Clear cache when update content')],
-    );
+    ];
 
     if ($config->get('cec_auto_cache_clear_content')) {
       $cec_auto_cache_clear_content['#default_value'] = $config->get('cec_auto_cache_clear_content');
@@ -102,21 +102,21 @@ class CecAdminSettingsForm extends ConfigFormBase {
 
     // Auto clear cache for users
     // TODO: Pending to https://www.drupal.org/node/2712079
-    $cec_auto_cache_clear_users = array(
+    $cec_auto_cache_clear_users = [
       '#type' => 'checkboxes',
       '#options' => ['cec_auto_cache' => $this->t('Clear cache when update users')],
-    );
+    ];
 
     if ($config->get('cec_auto_cache_clear_users')) {
       $cec_auto_cache_clear_users['#default_value'] = $config->get('cec_auto_cache_clear_users');
     }
     $form['cache']['cec_auto_cache_clear_users'] = $cec_auto_cache_clear_users;
 
-    $form['actions']['submit'] = array(
+    $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Save'),
       '#button_type' => 'primary',
-    );
+    ];
 
     return parent::buildForm($form, $form_state);
   }
@@ -126,14 +126,15 @@ class CecAdminSettingsForm extends ConfigFormBase {
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
 
-    // Get data
+    // Get data.
     $data = $form_state->getValues();
 
-    // Test connection
+    // Test connection.
     $test_connection_cec = cloudfront_edge_caching_test_connection($data['cec_region'], $data['cec_key'], $data['cec_secret']);
 
     if ($test_connection_cec[0] == FALSE) {
       switch($test_connection_cec[1]) {
+        
         case '403':
           $form_state->setErrorByName('cec_key', $this->t('The credentials are incorrect.'));
           $form_state->setErrorByName('cec_secret', $this->t('The credentials are incorrect.'));
