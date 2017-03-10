@@ -10,7 +10,6 @@
 
 use Aws\Exception\AwsException;
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\Core\Entity\EntityInterface;
 
 /**
  * Implements hook_help().
@@ -28,7 +27,7 @@ function cloudfront_edge_caching_help($route_name, RouteMatchInterface $route_ma
 /**
  * Implements hook_entity_update().
  */
-function cloudfront_edge_caching_entity_update(Drupal\Core\Entity\EntityInterface $entity) {
+function cloudfront_edge_caching_entity_update(EntityInterface $entity) {
 
   // Get settings.
   $config = \Drupal::config('cec.settings');
@@ -64,9 +63,9 @@ function cloudfront_edge_caching_entity_update(Drupal\Core\Entity\EntityInterfac
 }
 
 /**
- * Test connection with Amazon AWS
+ * Test connection with Amazon AWS.
  *
- * Data may be stored as either plain text or as serialized data. cache_get
+ * Data may be stored as either plain text or as serialized data. cache_get.
  *
  * @param string $cec_region
  *   Regions configured in the administer form
