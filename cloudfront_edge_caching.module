@@ -5,7 +5,7 @@
  * This module enables integration with Amazon Cloudfront functionality.
  *
  * Administrators can add the credentials in order to clear cache when
- * content and users are updated, also it's possible invalidate specific URL
+ * content and users are updated, also it's possible invalidate specific URL.
  */
 
 use Aws\Exception\AwsException;
