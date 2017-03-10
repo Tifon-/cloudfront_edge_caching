@@ -79,14 +79,14 @@ function cloudfront_edge_caching_entity_update(EntityInterface $entity) {
  */
 function cloudfront_edge_caching_test_connection($cec_region, $cec_key, $cec_secret) {
 
-  // Return values
+  // Return values.
   $return[0] = FALSE;
   $return[1] = 'status';
   $return[2] = 'message';
 
   if (!empty($cec_region) && !empty($cec_key) && !empty($cec_secret)) {
-    // Load AWS SDK
-    $cloudFront = new  Aws\CloudFront\CloudFrontClient([
+    // Load AWS SDK.
+    $cloudFront = new Aws\CloudFront\CloudFrontClient([
       'version' => 'latest',
       'region' => $cec_region,
       'credentials' => [
