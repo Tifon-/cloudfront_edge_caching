@@ -27,15 +27,7 @@ class CecAdminSettingsForm extends ConfigFormBase {
   }
 
   /**
-   * Form constructor.
-   *
-   * @param array $form
-   * An associative array containing the structure of the form.
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   * The current state of the form.
-   *
-   * @return array
-   * The form structure.
+   * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
@@ -129,6 +121,9 @@ class CecAdminSettingsForm extends ConfigFormBase {
     return parent::buildForm($form, $form_state);
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function validateForm(array &$form, FormStateInterface $form_state) {
 
     // Get data
@@ -150,12 +145,7 @@ class CecAdminSettingsForm extends ConfigFormBase {
   }
 
   /**
-   * Form submission handler.
-   *
-   * @param array $form
-   * An associative array containing the structure of the form.
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   * The current state of the form.
+   * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     // Retrieve the configuration
