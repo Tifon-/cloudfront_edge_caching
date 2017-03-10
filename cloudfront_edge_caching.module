@@ -70,13 +70,12 @@ function cloudfront_edge_caching_entity_update(EntityInterface $entity) {
  * @param string $cec_region
  *   Regions configured in the administer form.
  * @param string $cec_key
- *   Regions configured in the administer form
+ *   Regions configured in the administer form.
  * @param string $cec_secret
- *   Regions configured in the administer form
+ *   Regions configured in the administer form.
  *
  * @return mixed
  *   The value result.
- *
  */
 function cloudfront_edge_caching_test_connection($cec_region, $cec_key, $cec_secret) {
 
