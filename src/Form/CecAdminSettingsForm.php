@@ -4,19 +4,14 @@ namespace Drupal\cloudfront_edge_caching\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Aws;
-use Aws\Exception\AwsException;
 
 /**
- * Configure settings for Cloudfront credentials
+ * Configure settings for Cloudfront credentials.
  */
 class CecAdminSettingsForm extends ConfigFormBase {
 
   /**
-   * Returns a unique string identifying the form.
-   *
-   * @return string
-   * The unique string identifying the form.
+   * {@inheritdoc}
    */
   public function getFormId() {
     return 'cec_admin_settings';
