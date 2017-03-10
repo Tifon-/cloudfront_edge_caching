@@ -116,7 +116,7 @@ class CecAdminInvalidateUrl extends ConfigFormBase {
         drupal_set_message($this->t('You invalidation is in progress.'), 'status');
       }
       else {
-        drupal_set_message(t($message), 'error');
+        drupal_set_message($this->t($message), 'error');
       }
     }
   }
