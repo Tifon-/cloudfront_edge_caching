@@ -133,13 +133,13 @@ class CecAdminSettingsForm extends ConfigFormBase {
     $test_connection_cec = cloudfront_edge_caching_test_connection($data['cec_region'], $data['cec_key'], $data['cec_secret']);
 
     if ($test_connection_cec[0] == FALSE) {
-      switch($test_connection_cec[1]) {
-
+      switch ($test_connection_cec[1]) {
         case '403':
           $form_state->setErrorByName('cec_key', $this->t('The credentials are incorrect.'));
           $form_state->setErrorByName('cec_secret', $this->t('The credentials are incorrect.'));
           break;
         default:
+          
           $form_state->setErrorByName('', $this->t($test_connection_cec[2]));
       }
     }
