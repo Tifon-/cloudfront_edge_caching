@@ -4,9 +4,6 @@ namespace Drupal\cloudfront_edge_caching\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\cloudfront_edge_caching;
-use Aws;
-use Aws\Exception\AwsException;
 
 /**
  * Invalidate manual URL
