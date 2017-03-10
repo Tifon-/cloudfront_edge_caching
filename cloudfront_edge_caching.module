@@ -68,11 +68,9 @@ function cloudfront_edge_caching_entity_update(EntityInterface $entity) {
  * Data may be stored as either plain text or as serialized data. cache_get.
  *
  * @param string $cec_region
- *   Regions configured in the administer form
- *
+ *   Regions configured in the administer form.
  * @param string $cec_key
  *   Regions configured in the administer form
- *
  * @param string $cec_secret
  *   Regions configured in the administer form
  *
