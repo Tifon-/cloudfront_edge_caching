@@ -104,4 +104,5 @@ class CecAdminInvalidateUrl extends ConfigFormBase {
       }
     }
   }
+
 }
