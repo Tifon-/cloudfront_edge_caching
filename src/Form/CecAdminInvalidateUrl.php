@@ -6,15 +6,12 @@ use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Invalidate manual URL
+ * Invalidate manual URL.
  */
 class CecAdminInvalidateUrl extends ConfigFormBase {
 
   /**
-   * Returns a unique string identifying the form.
-   *
-   * @return string
-   * The unique string identifying the form.
+   * {@inheritdoc}
    */
   public function getFormId() {
     return 'cec_admin_settings';
@@ -30,15 +27,7 @@ class CecAdminInvalidateUrl extends ConfigFormBase {
   }
 
   /**
-   * Form constructor.
-   *
-   * @param array $form
-   * An associative array containing the structure of the form.
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   * The current state of the form.
-   *
-   * @return array
-   * The form structure.
+   * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
@@ -59,6 +48,9 @@ class CecAdminInvalidateUrl extends ConfigFormBase {
     return $form;
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function validateForm(array &$form, FormStateInterface $form_state) {
 
     // Get the URL
@@ -78,12 +70,7 @@ class CecAdminInvalidateUrl extends ConfigFormBase {
   }
 
   /**
-   * Custom submission handler.
-   *
-   * @param array $form
-   *   An associative array containing the structure of the form.
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *   The current state of the form.
+   * {@inheritdoc}
    */
   public function invalidateSubmission(array &$form, FormStateInterface $form_state) {
     // Get the URL
