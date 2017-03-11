@@ -87,7 +87,7 @@ function cloudfront_edge_caching_test_connection($cec_region, $cec_key, $cec_sec
 
   if (!empty($cec_region) && !empty($cec_key) && !empty($cec_secret)) {
     // Load AWS SDK.
-    $cloudFront = new Aws\CloudFront\CloudFrontClient([
+    $cloudFront = new CloudFrontClient([
       'version' => 'latest',
       'region' => $cec_region,
       'credentials' => [
