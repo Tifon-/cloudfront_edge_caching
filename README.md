@@ -10,9 +10,9 @@ CONTENTS OF THIS FILE
 INTRODUCTION
 ------------
 
-The Cloudfront Edge Caching allows clear cache pages in Amazon Web Services throught the
-Drupal Interface. Also, you can configure the module for automatic cache clear when 
-users or content are updated.
+The Cloudfront Edge Caching allows clear cache pages in Amazon Web Services 
+through the Drupal Interface. Also, you can configure the module for automatic 
+cache clear when users or content are updated.
 
  * For a full description of the module, visit the project page:
    https://www.drupal.org/project/cloudfront_edge_caching
