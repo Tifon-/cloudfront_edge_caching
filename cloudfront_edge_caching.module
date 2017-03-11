@@ -121,7 +121,9 @@ function cloudfront_edge_caching_test_connection($cec_region, $cec_key, $cec_sec
 /**
  * Invalidate specific URL.
  *
- * @param array $paths
+ * @param string $paths
+ *   Array with paths to invalidate.
+ *
  * @return mixed
  *   The value result.
  */
