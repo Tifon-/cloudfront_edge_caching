@@ -49,8 +49,8 @@ CONFIGURATION
 
    - Administer Cloudfront Edge Caching settings
 
-     Users in roles with the "Administer Cloudfront Edge Caching settings" permission will configure
-     the settings parameters.
+     Users in roles with the "Administer Cloudfront Edge Caching settings" 
+     permission will configure the settings parameters.
 
  * Customize the menu settings in Administration » Configuration » Services » 
    Cloudfront Edge Caching.
@@ -59,4 +59,4 @@ MAINTAINERS
 -----------
 
 Current maintainers:
- * José Antonio Rodríguez Bonilla (jarodriguez) - https://www.drupal.org/user/1551452
+ * José Antonio Rodríguez (jarodriguez) - https://www.drupal.org/user/1551452
