@@ -92,14 +92,16 @@ function cloudfront_edge_caching_test_connection($cec_region, $cec_key, $cec_sec
       'region' => $cec_region,
       'credentials' => [
         'key' => $cec_key,
-        'secret' => $cec_secret
-      ]
+        'secret' => $cec_secret,
+      ],
     ]);
 
-    // Try a connection test
+    // Try a connection test.
     try {
       $cloudFront->listDistributions();
-    } catch (AwsException $e) {
+    }
+
+    catch (AwsException $e) {
       $catch = TRUE;
       $return[1] = $e->getStatusCode();
       $return[2] = $e->getMessage();
