@@ -119,8 +119,11 @@ function cloudfront_edge_caching_test_connection($cec_region, $cec_key, $cec_sec
 }
 
 /**
- * @param $paths
+ * Invalidate specific URL.
+ *
+ * @param array $paths
  * @return mixed
+ *   The value result.
  */
 function cloudfront_edge_caching_invalidate_url($paths) {
 
