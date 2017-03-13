@@ -12,3 +12,10 @@ cec.admin_invalidate_url:
     _title: 'Invalidate URL'
   requirements:
     _permission: 'administer cec'
+# cec.admin_request_management:
+#  path: 'admin/config/services/cec/request-management'
+#  defaults:
+#    _controller: '\Drupal\cloudfront_edge_caching\Controller\Table::pager'
+#    _title: 'Requests Management'
+#  requirements:
+#    _permission: 'administer cec'
