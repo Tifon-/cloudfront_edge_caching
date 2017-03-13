@@ -11,6 +11,7 @@
 use Aws\Exception\AwsException;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Aws\CloudFront\CloudFrontClient;
+use Drupal\Core\Entity\EntityInterface;
 
 /**
  * Implements hook_help().
