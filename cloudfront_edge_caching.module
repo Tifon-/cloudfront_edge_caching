@@ -37,7 +37,7 @@ function cloudfront_edge_caching_entity_update(EntityInterface $entity) {
   $enable_auto_clear_cache_content = $config->get('cec_auto_cache_clear_content');
   $enable_auto_clear_cache_users = $config->get('cec_auto_cache_clear_users');
 
-  if ($enable_auto_clear_cache_content['cec_auto_cache'] || $enable_auto_clear_cache_users['cec_auto_cache']) {
+  if (isset($enable_auto_clear_cache_content['cec_auto_cache']) || isset($enable_auto_clear_cache_users['cec_auto_cache'])) {
     // Only clear URL in nodes.
     $entity_type = $entity->getEntityTypeId();
 
