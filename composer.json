@@ -1,5 +1,5 @@
 {
-  "name": "drupal/cec",
+  "name": "tifon/cloudfront_edge_caching",
   "type": "drupal-module",
   "description": "Cloudfront Edge Caching drupal module",
   "license": "GPLv2",
